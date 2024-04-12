@@ -1,12 +1,21 @@
-//
-//  matrix.h
-//  Lab4Part2
-//
-//  Created by Charalambos Hadjigeorgiou on 12/04/2024.
-//
+/** \file Matrix.h
+ * \brief This file contains the header file for a small matrix Library which is 0-based
+ * \author Charalambos Hadjigeorgiou
+ * \date 12/04/2024
+ * \copyright UNic
+*/
 
-#ifndef matrix_h
-#define matrix_h
+#ifndef MATRIX_H
+#define MATRIX_H
 
+const int MAX_COL = 5;
 
-#endif /* matrix_h */
+//prototypes
+double SumofRow(const double mat[][MAX_COL], const int row, const int maxRow);
+double sumOfCol(const double mat[][MAX_COL], const int column, const int maxRow);
+void fillWithRandomNum(double [][MAX_COL], const int maxRow);
+void printMatrix(const double mat[][MAX_COL], const int maxRow);
+
+double* sumOfCols(const double mat[][MAX_ROW], const int matRow);
+
+#endif
