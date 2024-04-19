@@ -11,11 +11,14 @@
 const int MAX_COL = 5;
 
 //prototypes
-double SumofRow(const double mat[][MAX_COL], const int row, const int maxRow);
-double sumOfCol(const double mat[][MAX_COL], const int column, const int maxRow);
-void fillWithRandomNum(double [][MAX_COL], const int maxRow);
 void printMatrix(const double mat[][MAX_COL], const int maxRow);
+void fillWithRandomNum(double [][MAX_COL], const int maxRow);
+double sumOfCol(const double mat[][MAX_COL], const int column, const int maxRow);
+double SumofRow(const double mat[][MAX_COL], const int row, const int maxRow);
 
-double* sumOfCols(const double mat[][MAX_ROW], const int matRow);
+
+
+
+double* sumOfCols(const double mat[][MAX_COL], const int matRow);
 
 #endif

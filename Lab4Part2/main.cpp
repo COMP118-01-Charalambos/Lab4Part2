@@ -7,6 +7,7 @@
 
 #include <iostream>
 #include <cassert>
+#include <cstdlib>
 #include "matrix.h"
 
 using namespace std;
@@ -16,7 +17,6 @@ using namespace std;
  * <BR>
  * @return Returns 0
  */
-
 int main () {
     const int MAX_ROW = 6;
     int choice, column;
@@ -38,6 +38,7 @@ int main () {
         switch (choice) {
             case 1:
                 printMatrix(mat, MAX_ROW);
+                cout << endl;
                 break;
                 
             case 2:
@@ -60,11 +61,10 @@ int main () {
                 
                 
             case 5:
-                
                 ptrSums = sumOfCols(mat, MAX_ROW);
                 
                 cout << "\nSums of columns: ";
-                for (int i = 0; i < MAX_ROW; ++i) {
+                for (int i = 0; i < MAX_COL; ++i) {
                     cout << "\n(" << i << ": " << ptrSums[i];
                 }
                 

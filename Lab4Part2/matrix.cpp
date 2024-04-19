@@ -8,6 +8,7 @@
 #include "matrix.h"
 #include <iostream>
 #include <cassert>
+#include <cstdlib>
 
 using namespace std;
 
@@ -23,6 +24,7 @@ void printMatrix(const double mat[][MAX_COL], const int maxRow) {
     // @todo make it look nicer,
     for (int i = 0; i < maxRow; ++i) {
         cout << "\nR" << i << ": ";
+        
         for (int j = 0; j < MAX_COL; ++j) {
             cout << mat [i][j] << "\t";
         }
@@ -30,20 +32,19 @@ void printMatrix(const double mat[][MAX_COL], const int maxRow) {
 }
 
 /**
- * Returns the sums of the colums of the matrix (reduction)
- * @warning...
+ * Fills the Matrix with random genareted numbers
  * <BR>
- * @param mat the matrix
- * @param matRow How many rows the matrix has
- * @return The sums of the colums as a Vector
+ * @param mat The matrix to be shown
+ * @param maxRow How many rows the matrix has
  */
-double* sumOfColms(const double mat[][MAX_COL], const int matRow) {
-    double sums = new double[MAX_COL]{ 0 }
+void fillWithRandomNum (double mat[][MAX_COL], const int maxRow) {
     
-    for (int i = 0; i < MAX_ROW; i++)
-        sums[i] = sumOfCol(mat, i, maxRow);
+    srand(static_cast<unsigned int>(time(NULL)));
     
-    return sums;
+    for (int i = 0; i < maxRow; i++)
+        for (int j = 0; j < MAX_COL; j++)
+            mat[i][j] = rand() % 100;
+    
 }
 
 /**
@@ -67,3 +68,21 @@ double sumOfCol(const double mat [][MAX_COL], const int column, const int maxRow
     
     return sum;
 }
+
+/**
+ * Returns the sums of the colums of the matrix (reduction)
+ * <BR>
+ * @param mat the matrix
+ * @param maxRow How many rows the matrix has
+ * @return The sums of the colums as a Vector
+ */
+double* sumOfCols(const double mat[][MAX_COL], const int maxRow) {
+    double* sums = new double[MAX_COL]{ 0 };
+    
+    for (int i = 0; i < MAX_COL; i++)
+        sums[i] = sumOfCol(mat, i, maxRow);
+    
+    return sums;
+}
+
+
