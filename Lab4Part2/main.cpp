@@ -1,5 +1,6 @@
 /** \file Lab4Part2.cpp
  * \brief This file contains a small Matrix manipulation program
+ * \bug report: The program has 3 logacl bugs
  * \author Charalambos Hadjigeorgiou
  * \date 05/04/2024
  * \copyright UNic
