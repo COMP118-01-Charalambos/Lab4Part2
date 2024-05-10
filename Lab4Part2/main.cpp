@@ -69,7 +69,7 @@ int main () {
                     cerr << "\nWrong row! Please try again: ";
                     cin >> row;
                 }
-                cout << "\nSum of row " << row << " is: " << SumofRow(mat, row, MAX_ROW);
+                cout << "\nSum of row " << row << " is: " << sumOfRow(mat, row, MAX_ROW);
                 break;
                 
             case 5:
@@ -77,7 +77,8 @@ int main () {
                 
                 cout << "\nSums of columns: ";
                 for (int i = 0; i < MAX_COL; ++i) {
-                    cout << "\n(" << i << ": " << ptrSums[i];
+                    cout << "\n" << i << "): " << ptrSums[i];
+                    cout <<"\n";
                 }
                 delete[] ptrSums;
                 break;

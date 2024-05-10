@@ -58,7 +58,6 @@ void fillWithRandomNum (double mat[][MAX_COL], const int maxRow) {
 
 double sumOfCol(const double mat [][MAX_COL], const int column, const int maxRow) {
     assert (maxRow > 0);
-    assert (column >= 0 && column < MAX_COL);
     
     double sum = 0;
     
@@ -100,7 +99,7 @@ double sumOfRow(const double mat[][MAX_COL], const int row, const int maxRow) {
 double* sumOfCols(const double mat[][MAX_COL], const int maxRow) {
     double* sums = new double[MAX_COL]{ 0 };
     
-    for (int i = 0; i < MAX_COL; i++)
+    for (int i = 0; i < maxRow; i++)
         sums[i] = sumOfCol(mat, i, maxRow);
     
     return sums;
