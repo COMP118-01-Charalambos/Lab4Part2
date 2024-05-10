@@ -78,8 +78,21 @@ int main () {
                 for (int i = 0; i < MAX_COL; ++i) {
                     cout << "\n(" << i << ": " << ptrSums[i];
                 }
-                
                 delete[] ptrSums;
+                break;
+                
+            case 6:
+                ptrSums = sumOfRows(mat, MAX_ROW);
+                cout << "\nSum of rows: ";
+                for (int i = 0; i < MAX_ROW; i++) {
+                    cout << "\nR" << i << ": " << ptrSums[i];
+                cout << "\n";
+                }
+                delete[] ptrSums;
+                break;
+                
+            case 7:
+                cout << "\nSum of matrix is: " << sumOfMatrix(mat, MAX_ROW);
                 break;
                 
             case 8:

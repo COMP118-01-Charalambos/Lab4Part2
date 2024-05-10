@@ -48,8 +48,8 @@ void fillWithRandomNum (double mat[][MAX_COL], const int maxRow) {
 }
 
 /**
- * Return the sum of the specified column.
- *
+ * Returns the sum of the specified column.
+ * <BR>
  * @param mat the matrix
  * @param column the column to sum
  * @param maxRow How many rows the matrix has
@@ -71,6 +71,7 @@ double sumOfCol(const double mat [][MAX_COL], const int column, const int maxRow
 
 /**
  * Calculates the sum of elements in a given row of the matrix
+ * <BR>
  * @param mat The matrix
  * @param row The index of the row to sum
  * @param maxRow The maximum number of rows in the matrix
@@ -105,4 +106,42 @@ double* sumOfCols(const double mat[][MAX_COL], const int maxRow) {
     return sums;
 }
 
+/**
+* Returns the sum of the rows of the matrix (reduction)
+* <BR>
+* @param mat The matrix
+* @param maxRow How many rows the matrix has
+* @return The sum of the rows as a Vector
+*/
 
+double* sumOfRows(const double mat[][MAX_COL], const int maxRow) {
+    double* sums = new double[maxRow]{ 0 };
+    assert(maxRow > 0);
+
+    for (int i = 0; i < maxRow; i++) {
+        sums[i] = sumOfRow(mat, i, maxRow);
+    }
+
+    return sums;
+}
+
+/**
+* Returns the sum of the matrix
+* <BR>
+* @param mat The matrix
+* @param maxRow How many rows the matrix has
+* @return The sum of the matrix
+*/
+
+double sumOfMatrix(const double mat[][MAX_COL], const int maxRow) {
+    double sum = 0;
+    assert(maxRow > 0);
+
+    for (int i = 0; i < maxRow; i++) {
+        for (int j = 0; j < MAX_COL; j++) {
+            sum += mat[i][j];
+        }
+    }
+
+    return sum;
+}
