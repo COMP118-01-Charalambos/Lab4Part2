@@ -62,10 +62,30 @@ double sumOfCol(const double mat [][MAX_COL], const int column, const int maxRow
     
     double sum = 0;
     
-    for (int i = 0; i <maxRow; i++) {
+    for (int i = 0; i < maxRow; i++) {
         sum += mat[i][column];
     }
     
+    return sum;
+}
+
+/**
+ * Calculates the sum of elements in a given row of the matrix
+ * @param mat The matrix
+ * @param row The index of the row to sum
+ * @param maxRow The maximum number of rows in the matrix
+ * @return The sum of elements in the specified row
+ */
+double sumOfRow(const double mat[][MAX_COL], const int row, const int maxRow) {
+    assert(maxRow > 0);
+    assert(row >= 0 && row < maxRow);
+
+    double sum = 0;
+
+    for (int j = 0; j < MAX_COL; j++) {
+        sum += mat[row][j];
+    }
+
     return sum;
 }
 

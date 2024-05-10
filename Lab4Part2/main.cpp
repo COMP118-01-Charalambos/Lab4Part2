@@ -19,7 +19,7 @@ using namespace std;
  */
 int main () {
     const int MAX_ROW = 6;
-    int choice, column;
+    int choice;
     double mat[MAX_ROW][MAX_COL] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11};
     double* ptrSums;
     
@@ -59,6 +59,17 @@ int main () {
                 cout << "\nSum of column " << column << " is: " << sumOfCol(mat, column, MAX_ROW);
                 break;
                 
+            case 4:
+                int row;
+                cout << "\nEnter the row to sum: ";
+                cin >> row;
+                
+                while (row < 0 || row >= MAX_ROW) {
+                    cerr << "\nWrong row! Please try again: ";
+                    cin >> row;
+                }
+                cout << "\nSum of row " << row << " is: " << SumofRow(mat, row, MAX_ROW);
+                break;
                 
             case 5:
                 ptrSums = sumOfCols(mat, MAX_ROW);
