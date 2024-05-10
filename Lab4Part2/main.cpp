@@ -18,7 +18,7 @@ using namespace std;
  * @return Returns 0
  */
 int main () {
-    const int MAX_ROW = 6;
+    const int MAX_ROW = 10;
     int choice;
     double mat[MAX_ROW][MAX_COL] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11};
     double* ptrSums;
