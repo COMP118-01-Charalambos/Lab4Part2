@@ -28,11 +28,12 @@ int main () {
         cout << "\n1)Print Matrix";
         cout << "\n2)Fill with randoms";
         cout << "\n3)Sum of column";
-        
+        cout << "\n4)Sum of row";
         cout << "\n5)Sum of columns";
-        
-        cout <<"\n8) Exit";
-        cout <<"\nEnter choice: ";
+        cout << "\n6)Sum of rows";
+        cout << "\n7)Sum of matrix";
+        cout << "\n8) Exit";
+        cout << "\nEnter choice: ";
         cin >> choice;
         
         switch (choice) {
@@ -83,6 +84,7 @@ int main () {
                 
             case 6:
                 ptrSums = sumOfRows(mat, MAX_ROW);
+                
                 cout << "\nSum of rows: ";
                 for (int i = 0; i < MAX_ROW; i++) {
                     cout << "\nR" << i << ": " << ptrSums[i];
