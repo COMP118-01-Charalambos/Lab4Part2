@@ -102,7 +102,7 @@ double* sumOfCols(const double mat[][MAX_COL], const int maxRow) {
     for (int i = 0; i < MAX_COL; i++)
         sums[i] = sumOfCol(mat, i, maxRow);
     
-    return 0;
+    return sums;
 }
 
 /**
